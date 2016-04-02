@@ -17,6 +17,11 @@
     {
       "matches": ["*://web.stevens.edu/scheduler/*"],
       "js": ["jquery.min.js", "schedulerpro.js"]
+    },
+    
+    {
+      "matches": ["*://iofel.me:3000/Fake Class Input*"],
+      "js": ["jquery.min.js", "registration.js"]
     }
   ]
 }

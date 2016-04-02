@@ -38,7 +38,7 @@ $(function () { // run this function after the page is fully loaded
         e.preventDefault() // don't redirect the form
         var user = $('input').val()
         if (user) {
-            // save the username
+            //upload classes
             chrome.storage.sync.set({'user': user}, function () {
                 message('Uploaded!')
             })
