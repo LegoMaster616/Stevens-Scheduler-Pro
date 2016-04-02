@@ -13,10 +13,18 @@
     "storage",
     "activeTab"
   ],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
       "matches": ["*://web.stevens.edu/scheduler/*"],
       "js": ["jquery.min.js", "schedulerpro.js"]
+    },
+
+    {
+      "matches": ["*://iofel.me/Fake Class Input*"],
+      "js": ["jquery.min.js", "registration.js"]
     }
   ]
 }
