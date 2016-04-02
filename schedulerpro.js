@@ -2,4 +2,4 @@ var greeting = "hello world";
 //alert(greeting);
 
 
-$("session saved").css("background-color", "yellow");
+$("session saved").append("hello world");
