@@ -7,12 +7,13 @@ chrome.runtime.sendMessage({giveMe: 'user'}, function(response) {
             if ($(curDiv).text()[0] != '*') { // update
                 let title = divs[i].title
                 let classid = title.substring(title.length-5, title.length)
+                console.log('updating ' + classid)
                 $.getJSON('https://iofel.me:3000/api/interested/' + classid, function (data) {
                     $(curDiv).prepend("<b>* " + data.count + " students are interested *</b><br>")
                 })
             }
         }
-    }, 50);
+    }, 100);
 })
 
 
