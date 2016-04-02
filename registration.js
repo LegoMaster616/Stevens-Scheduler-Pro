@@ -1,24 +1,19 @@
-alert("hi");
-/*
+
 $.getJSON('https://iofel.me:3000/api/interested/', function (data) {
+    var keys = [];
     
-})
-
-
-
-chrome.runtime.sendMessage({giveMe: 'user'}, function(response) {
-    var user = response.user;
-    
-    
-    
-    $("#firstclass").val(user[0]);
-    $("#secondclass").val(user[1]);;
-    $("#thirdclass").val(user[2]);;
-    $("#fourthclass").val(user[3]);;
-    $("#fifthclass").val(user[4]);;
-    $("#sixthclass").val(user[5]);;
-    $("#seventhclass").val(user[6]);;
-    $("#eighthclass").val(user[7]);;
-})
-
-*/
+    for(var key in data){
+        
+        if(data[key] == "aafflitt")
+            keys.push(key);
+    }
+    console.log(keys);
+    $("#firstclass").val(keys[0]);
+    $("#secondclass").val(keys[1]);
+    $("#thirdclass").val(keys[2]);
+    $("#fourthclass").val(keys[3]);
+    $("#fifthclass").val(keys[4]);
+    $("#sixthclass").val(keys[5]);
+    $("#seventhclass").val(keys[6]);
+    $("#eighthclass").val(keys[7]);
+});
