@@ -16,12 +16,9 @@ $(window).on('hashchange', function() {
         // ask the extension for the user
         chrome.runtime.sendMessage({giveMe: 'user'}, function (response) {
             var user = response.user
-            // talk to API for each class
-            for (var i=0; i<classes.length; ++i) {
-                var api = 'http://iofel.me:3000/api/interested/' + classes[i] + '/' + user
-                $.ajax(api, { method: 'post' })
-            }
+            var api = 'https://iofel.me:3000/api/interested/' + user
+            // talk to API
+            $.ajax(api, { method: 'post', data: { classes: classes } })
         })
     }
 })
-
