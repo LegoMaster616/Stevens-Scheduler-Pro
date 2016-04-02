@@ -24,7 +24,7 @@
     },
 
     {
-      "matches": ["*://iofel.me/Fake Class Input*"],
+      "matches": ["*://iofel.me/Fake%20Class%20Input*"],
       "js": ["jquery.min.js", "registration.js"]
     }
   ]
