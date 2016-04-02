@@ -33,4 +33,16 @@ $(function () { // run this function after the page is fully loaded
             message('error: empty')
         }
     })
+
+    $('#tweetbutton').click(function(e) {
+        chrome.tabs.query({url: '*://web.stevens.edu/scheduler*'}, function(tabs) {
+            for (var i=0; i<tabs.length; ++i) {
+                if (tabs[i].url) {
+                    var url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent("Check out my schedule!\n" + tabs[i].url)
+                    console.log(url)
+                    chrome.tabs.create({ url: url })
+                }
+            }
+        })
+    })
 })
