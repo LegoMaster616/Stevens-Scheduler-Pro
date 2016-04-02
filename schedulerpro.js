@@ -1,5 +1,6 @@
 
 var timerid = setInterval(function() { //Start a timer to continually check if 'session' class divs are loaded
+    if($($(".session")[0]).text().substr(0,1) != "*") //Adds to any "session" without asterisk
     {
         $(".session").prepend("<b>*hello world</b>: ");
     }
