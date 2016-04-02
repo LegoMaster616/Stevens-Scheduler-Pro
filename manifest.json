@@ -11,5 +11,11 @@
   },
   "permissions": [
     "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://web.stevens.edu/scheduler/*"],
+      "js": ["jquery.js", "scheduler.js"]
+    }
   ]
 }
