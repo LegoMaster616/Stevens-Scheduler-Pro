@@ -15,7 +15,7 @@
   "content_scripts": [
     {
       "matches": ["http://web.stevens.edu/scheduler/*"],
-      "js": ["scheduler.js"]
+      "js": ["schedulerpro.js"]
     }
   ]
 }
