@@ -1,5 +1,16 @@
-var greeting = "hello world";
-//alert(greeting);
-
-
-$("session").append("hello world");
+$(window).on('hashchange', function() {
+    // URL changed
+    var url = document.location.hash.split('=')[1]
+    if (url) {
+        var classes = url.split(',')
+        // ask the extension for the user
+        chrome.runtime.sendMessage({giveMe: 'user'}, function (response) {
+            var user = response.user
+            // talk to API for each class
+            for (var i=0; i<classes.length; ++i) {
+                var api = 'http://iofel.me:3000/api/interested/' + classes[i] + '/' + user
+                $.ajax(api, { method: 'post' })
+            }
+        })
+    }
+})
