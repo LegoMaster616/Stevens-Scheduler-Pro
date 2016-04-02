@@ -8,13 +8,26 @@ $(function () { // run this function after the page is fully loaded
         $('input').val(data.user)
     })
 
-    $('button').click(function (e) {
+    $('#loginbutton').click(function (e) {
         e.preventDefault() // don't redirect the form
         var user = $('input').val()
         if (user) {
             // save the username
             chrome.storage.sync.set({'user': user}, function () {
-                message('saved')
+                message('Saved!')
+            })
+        } else {
+            message('error: empty')
+        }
+    })
+
+    $('#transferbutton').click(function (e) {
+        e.preventDefault() // don't redirect the form
+        var user = $('input').val()
+        if (user) {
+            // save the username
+            chrome.storage.sync.set({'user': user}, function () {
+                message('Uploaded!')
             })
         } else {
             message('error: empty')
