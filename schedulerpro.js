@@ -1,11 +1,10 @@
 
 var timerid = setInterval(function() { //Start a timer to continually check if 'session' class divs are loaded
-    if($(".session").length > 0)
     {
-        $(".session").append(" hello world");
-        clearInterval(timerid);
+        $(".session").prepend("<b>*hello world</b>: ");
     }
-}, 75);
+}, 50);
+
 
 $(window).on('hashchange', function() {
     // URL changed
